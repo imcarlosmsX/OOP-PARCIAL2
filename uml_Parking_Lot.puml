@@ -1,0 +1,48 @@
+@startuml
+
+
+abstract class Parking{
+
+guardar_carro()
+
+}
+
+class Usuario{
+
+name: str
+
+registro()
+
+}
+
+
+class Vehiculo{
+
+tipo : str
+tipo_de_tiempo: str
+tiempo : int
+
+
+
+}
+
+class Parqueadero {
+
+hora_inicio: float
+hora_fin: float
+
+guardar_vehiculo(Vehiculo)
+
+}
+
+
+Usuario "1"--*"1" Parqueadero
+Vehiculo "*"--*"1" Parqueadero
+Usuario "1"*--"*" Vehiculo
+Parking --|> Usuario
+Parking --|> Parqueadero
+Parking --|> Vehiculo
+
+
+
+@enduml
